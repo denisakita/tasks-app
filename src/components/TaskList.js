@@ -7,7 +7,7 @@ const taskList = [
     {id: 3000, name: "Test3", completed: true},
 ]
 
-function TaskList() {
+function TaskList(props) {
 
     const [tasks, setTasks] = useState(taskList)
     const [show, setShow] = useState(true)
@@ -18,7 +18,7 @@ function TaskList() {
 
     return (
         <div className="App">
-            <h1>Tasks List</h1>
+            <h1>Tasks List {props.title}</h1>
             <ul>
                 <button className='trigger' onClick={() => setShow(!show)}>Toggle</button>
 

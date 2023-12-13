@@ -8,7 +8,7 @@ function App() {
     return (
         <div className="App">
             <Header/>
-            <TaskList/>
+            <TaskList title="12/12/2023"/>
         </div>
 
 )
