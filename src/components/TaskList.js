@@ -14,6 +14,10 @@ function TaskList(props) {
 
     const [tasks, setTasks] = useState(taskList)
     const [show, setShow] = useState(true)
+    const styles = {
+        color: "darkred",
+        border: "1px solid darkred"
+    }
 
     function handleDelete(id) {
         setTasks(tasks.filter(task => task.id !== id))
@@ -21,7 +25,8 @@ function TaskList(props) {
 
     return (
         <section className='tasklist'>
-            <h1>Task List</h1>
+            <h1 style={styles}>Task List
+            </h1>
             <ul>
                 <button className='trigger' onClick={() => setShow(!show)}>Toggle</button>
                 {show && tasks.map((task) => (
