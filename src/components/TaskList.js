@@ -4,27 +4,11 @@ import {TaskCard} from "./TaskCard";
 import "./TaskList.css";
 
 
-const taskList = [
-    {id: 1000, name: "Test1", completed: true},
-    {id: 2000, name: "Test2", completed: false},
-    {id: 3000, name: "Test3", completed: true},
-]
+export const TaskList = ({tasks, setTasks}) => {
+    const [show, setShow] = useState(true);
 
-function TaskList(props) {
-
-    const [tasks, setTasks] = useState(taskList)
-    const [show, setShow] = useState(true)
-    const styles = {
-        color: show ? "darkblue" : "darkred",
-        border: "1px solid",
-        borderColor: show ? "darkblue" : "darkred",
-        borderRadius: "5px",
-        fontSize: "28px",
-        padding: "20px"
-    }
-
-    function handleDelete(id) {
-        setTasks(tasks.filter(task => task.id !== id))
+    function handleDelete(id){
+        setTasks(tasks.filter(task => task.id !== id));
     }
 
     return (

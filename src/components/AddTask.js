@@ -1,9 +1,8 @@
 import "./AddTask.css";
 import {useState} from "react";
 
-export const AddTask = () => {
-
-    const [taskValue, setTaskValue] = useState('');
+export const AddTask = ({tasks, setTasks}) => {
+    const [taskValue, setTaskValue] = useState("");
 
     // 1. Add state for boolean value completed
     const [progress, setProgress] = useState(false);
@@ -22,13 +21,12 @@ export const AddTask = () => {
     // 4. Create onSubmit method for form
     const handleSubmit = (event) => {
         event.preventDefault();
-
         const task = {
-            id: Math.floor(Math.random() * 1000),
+            id: Math.floor(Math.random() * 10000),
             name: taskValue,
             completed: Boolean(progress)
         }
-        console.log(task);
+        setTasks([...tasks, task]);
         handleReset();
     }
 
