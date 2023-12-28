@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {TaskCard} from "./TaskCard";
-import {BoxCard} from "./BoxCard";
+
 import "./TaskList.css";
 
 
@@ -37,17 +37,6 @@ function TaskList(props) {
                     <TaskCard key={task.id} task={task} handleDelete={handleDelete}/>
                 ))}
             </ul>
-            <BoxCard result="success">
-                <p className="title">Offer Notification</p>
-                <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis,
-                    vel!</p>
-            </BoxCard>
-
-            <BoxCard result="warning">
-                <p className="title">Cookie Notification</p>
-                <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
-                    suscipit.</p>
-            </BoxCard>
         </section>
     )
 }

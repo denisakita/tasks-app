@@ -1,17 +1,17 @@
-.tasklist h1{
+.tasklist h1 {
     font-size: 28px;
     text-align: center;
     margin: 20px;
 }
 
-.tasklist ul{
+.tasklist ul {
     max-width: 600px;
     margin: 50px auto;
     padding: 20px;
     box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0, rgba(27, 31, 35, 0.15) 0 0 0 1px;
 }
 
-.tasklist button.trigger{
+.tasklist button.trigger {
     border: 0;
     border-radius: 5px;
     background-color: var(--theme-button);
