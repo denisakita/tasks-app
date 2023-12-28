@@ -1,20 +1,27 @@
 import "./AddTask.css";
-import {useState} from "react";
+import {useRef, useState} from "react";
 
 export const AddTask = ({tasks, setTasks}) => {
-    const [taskValue, setTaskValue] = useState("");
+    // const [taskValue, setTaskValue] = useState("");
 
     // 1. Add state for boolean value completed
     const [progress, setProgress] = useState(false);
+    const taskRef = useRef("");
 
-    const handleChange = (event) => {
-        setTaskValue(event.target.value);
 
-    }
+    // const handleChange = (event) => {
+    //     setTaskValue(event.target.value);
+    //
+    // }
+
+    // const handleChange = (event) => {
+    //     console.log(taskRef.current.value)
+    // }
 
     const handleReset = () => {
-        setTaskValue("");
         // 2. Add state for boolean value completed at reset
+        // setTaskValue("");
+        taskRef.current.value = "";
         setProgress(false);
     }
 
@@ -23,7 +30,7 @@ export const AddTask = ({tasks, setTasks}) => {
         event.preventDefault();
         const task = {
             id: Math.floor(Math.random() * 10000),
-            name: taskValue,
+            name: taskRef.current.value,
             completed: Boolean(progress)
         }
         setTasks([...tasks, task]);
@@ -34,8 +41,8 @@ export const AddTask = ({tasks, setTasks}) => {
         <section className="addtask">
             {/*3. Create onSubmit method for form*/}
             <form onSubmit={handleSubmit}>
-                <input onChange={handleChange} type="text" name="task" id="task"
-                       placeholder="Task Name" value={taskValue}/>
+                <input type="text" name="task" id="task"
+                       placeholder="Task Name" ref={taskRef}/>
 
                 {/*5. Add select with 2 values*/}
                 <select onChange={(event) => setProgress(event.target.value)} value={progress}>
