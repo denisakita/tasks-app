@@ -29,13 +29,14 @@ function TaskList(props) {
 
     return (
         <section className='tasklist'>
-            <h1 style={styles}>Task List
-            </h1>
             <ul>
-                <button className='trigger' onClick={() => setShow(!show)}>{show ? "Hide" : "Show"}</button>
-                {show && tasks.map((task) => (
-                    <TaskCard key={task.id} task={task} handleDelete={handleDelete}/>
-                ))}
+                <div className='header'>
+                    <h1>TaskList</h1>
+                    <button className='trigger' onClick={() => setShow(!show)}>{ show ? "Hide Tasks" : "Show Tasks"}</button>
+                </div>
+                { show && tasks.map((task) => (
+                    <TaskCard key={task.id} task={task} handleDelete={handleDelete} />
+                )) }
             </ul>
         </section>
     )

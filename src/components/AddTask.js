@@ -2,7 +2,7 @@ import "./AddTask.css";
 
 export const AddTask = () => {
     return (
-        <section className="task">
+        <section className="addtask">
             <form>
                 <label htmlFor="task">Task</label>
                 <input type="text" name="task" id="task" placeholder="Task Name"/>
