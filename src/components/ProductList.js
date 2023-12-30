@@ -4,7 +4,7 @@ import {useFetch} from "../hooks/useFetch";
 export const ProductList = () => {
     // const [products, setProducts] = useState([]);
     const [url, setUrl] = useState("http://localhost:3000/products");
-    const {data: products,loading} = useFetch(url);
+    const {data: products, loading, error} = useFetch(url);
 
     // 3. fetch as a function outside useEffect
 
@@ -49,6 +49,7 @@ export const ProductList = () => {
             </div>
 
             {loading && <p>Loading products ...</p>}
+            {error && <p>{error}</p>}
 
             {products && products.map((product) => (
                 <div className="card" key={product.id}>
