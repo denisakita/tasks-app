@@ -2,13 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import {BrowserRouter} from "react-router-dom";
+// import {BrowserRouter as Router} from "react-router-dom";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <React.StrictMode>
+        {/*<Router>*/}
+        <BrowserRouter>
+            <App/>
+        </BrowserRouter>
+        {/*</Router>*/}
+
+
+    </React.StrictMode>
 );
 
 
