@@ -1,6 +1,6 @@
 import Logo from "../assets/logo.png";
 import "./Header.css";
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 
 export const Header = () => {
     return (
@@ -10,10 +10,11 @@ export const Header = () => {
                 <span>Tasks App</span>
             </Link>
 
-            <nav className="navigation"></nav>
-            <Link to="/" className="link">Home</Link>
-            <Link to="/products" className="link">Products</Link>
-            <Link to="/contact" className="link">Contact</Link>
+            <nav className="navigation">
+            <NavLink to="/" className="link" end>Home</NavLink>
+            <NavLink to="/products" className="link">Products</NavLink>
+            <NavLink to="/contact" className="link">Contact</NavLink>
+            </nav>
         </header>
     )
 }
