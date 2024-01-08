@@ -10,6 +10,9 @@ export const ProductList = () => {
 
 
     return (
-        <div className="component">Product List</div>
+        <main>
+            <div className="component">Product List</div>
+
+        </main>
     )
 }

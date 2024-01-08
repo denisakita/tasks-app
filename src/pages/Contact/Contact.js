@@ -8,11 +8,14 @@ export const Contact = () => {
     }
 
     return (
-        <>
-            <div className="component">Contact</div>
-            <button onClick={handleSubmit}>Back To Home</button>
-            <Outlet/>
-        </>
+        <main>
+            <>
+                <div className="component">Contact</div>
+                <button onClick={handleSubmit}>Back To Home</button>
+                <Outlet/>
+            </>
+
+        </main>
 
     )
 }
