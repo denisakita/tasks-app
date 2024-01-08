@@ -1,6 +1,6 @@
 export const Admin = () => {
 
     return (
-        <div className="component">Admin</div>
+        <div className="component">Welcome to Admin Section</div>
     )
 }
